@@ -1,0 +1,35 @@
+<%= provide(:title, "Order Item " + @order_item.id.to_s) %>
+
+<div class="card d-flex display:block mx-auto" style="width: 40rem;">
+  <div class="card-header">
+    Order Item <%= @order_item.id %>
+  </div>
+  <div class="card-body">
+    
+    <p class="card-text">
+      <strong>Item title:</strong>
+      <%= @order_item.item_title %>
+    </p>
+    
+    <p class="card-text">
+      <strong>Item description:</strong>
+      <%= @order_item.item_description %>
+    </p>
+    
+    <p class="card-text">
+      <strong>Item quantity:</strong>
+      <%= @order_item.item_quantity %>
+    </p class="card-text">
+    
+    <p class="card-text">
+      <strong>Item price:</strong>
+      <%= @order_item.item_price %>
+    </p>
+    
+    <div class="text-center py-3">
+      <%= link_to 'Edit', edit_purchase_order_order_item_path([@purchase_order, @order_item]), class:"btn btn-success mx-2" %>
+      <%= link_to 'Delete', [@purchase_order, @order_item], method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger mx-2" %>
+      <%= link_to 'Back to Purchase Order', @purchase_order, class:"btn btn-link mx-2" %>
+    </div>
+  </div>
+</div>

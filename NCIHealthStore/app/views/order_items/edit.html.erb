@@ -1,0 +1,9 @@
+<%= provide(:title, "Edit Order Item") %>
+
+<h2 class="text-center m-3">Editing Order Item <%= @order_item.id.to_s %></h2>
+
+<div class="card d-flex display:block mx-auto" style="width: 40rem;">
+    <div class="card-body">
+        <%= render 'form_edit', order_item: @order_item %>
+    </div>
+</div>

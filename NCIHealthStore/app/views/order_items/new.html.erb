@@ -1,0 +1,9 @@
+<%= provide(:title, "New Order Item") %>
+
+<h2 class="text-center m-3">New Order Item in Purchase Order <%= @purchase_order.id %></h2>
+
+<div class="card d-flex display:block mx-auto" style="width: 40rem;">
+    <div class="card-body">
+        <%= render 'form_new', order_item: @order_item %>
+    </div>
+</div>

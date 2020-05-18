@@ -1,0 +1,30 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+ 
+ @import "bootstrap";
+
+.alert{
+ margin-bottom: 0;
+} 
+ 
+ a {
+    text-decoration: none !important;
+    color: $primary;
+ }
+ 
+ button {
+    text-decoration: none !important; 
+    color: $primary;
+ }
+ 
+ .view{
+    background-image: url('background.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center top; 
+    min-height: 700px; 
+    padding-top: 30px;
+    width: 100%;
+}

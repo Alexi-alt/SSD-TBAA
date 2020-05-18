@@ -1,0 +1,33 @@
+
+<%= form_for(purchase_order) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :client_number %>
+    <%= f.text_field :client_number, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :delivery_address %>
+    <%= f.text_field :delivery_address, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :delivery_city %>
+    <%= f.text_field :delivery_city, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :delivery_country %>
+    <%= f.text_field :delivery_country, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :delivery_fee %>
+    <%= f.number_field :delivery_fee, step: "any", class:'form-control' %>
+  </div>
+
+  <div class="form-group text-center">
+    <%= f.submit 'Save',  class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', purchase_orders_path,  class: 'btn btn-link' %>
+  </div>
+<% end %>

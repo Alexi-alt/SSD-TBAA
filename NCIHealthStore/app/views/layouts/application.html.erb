@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NCI Health Store | <%= yield(:title) %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <a  class="navbar-brand">NCI Health Store</a>
+      
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          
+          <% if @current_user %>
+          
+            <li class="nav-item mx-3">
+              <a><%= link_to "Purchase orders", purchase_orders_path %></a>
+            </li>
+            
+            <li class="nav-item mx-3">
+              <a><%= link_to "Order items", order_items_path %></a>
+            </li>
+            
+            <li class="nav-item mx-3">
+              <a><%= link_to 'Logout', logout_path %></a></a>
+            </li>
+          
+          <% else %>
+          
+            <li class="nav-item mx-3">
+              <a><%= link_to "About", about_path %></a>
+            </li>
+          
+            <li class="nav-item mx-3">
+              <a><%= link_to 'Login', login_path %></a>
+            </li>
+            
+            <li class="nav-item mx-3">
+              <a><%= link_to 'Sign up', signup_path %></a>
+            </li>
+          
+          <% end %>
+          
+          </ul>
+          
+          <% if @current_user %>
+          
+            <span class="navbar-text">
+              Logged in as <%= @current_user.name %>
+            </span>
+            
+          <% end %>
+          
+          
+      </div>
+    </nav>
+    <%= content_tag :div, flash[:notice], class: "alert alert-success" if flash[:notice].present? %>
+    <%= content_tag :div, flash[:alert], class: "alert alert-danger" if flash[:alert].present? %>
+    <%= content_tag :div, flash[:warning], class: "alert alert-warning" if flash[:warning].present? %>
+    <div class="view">
+      <div id="content" class="container min-vh-100 p-0">
+        <div class="row collapse show no-gutters d-flex h-100 position-relative">
+          <div class="col-12 pt-4">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

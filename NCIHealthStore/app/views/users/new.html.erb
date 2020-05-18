@@ -1,0 +1,34 @@
+<%= provide(:title, "Sign Up") %>
+<div class="my-3">
+ <h2 class="text-center"> Create your account</h2>
+ 
+ <div class="card d-flex display:block mx-auto" style="width: 30rem;">
+  <div class="card-body">
+   
+   
+   <%=form_tag "/users", method: :post do%>
+   
+    <div class="form-group">
+     <%= label_tag :name%>
+     <%= text_field_tag :name, nil, placeholder: 'Full name', autocomplete: 'off', class: 'form-control'%>
+    </div>
+    <div class="form-group">
+     <%= label_tag :email%>
+     <%= text_field_tag :email, nil, placeholder: 'Email address', autocomplete: 'off', class: 'form-control'%>
+    </div>
+    <div class="form-group">
+     <%= label_tag :password%>
+     <%= password_field_tag :password, nil, placeholder: 'Password', autocomplete: 'off', class: 'form-control'%>
+    </div>
+    <div class="form-group">
+     <%= label_tag :password_confirmation%>
+     <%= password_field_tag :password_confirmation, nil, placeholder: 'Confirm password', autocomplete: 'off', class: 'form-control'%>
+    </div>
+   
+    <div class="text-center">
+     <%= submit_tag "Sign Up", class: "btn btn-primary"%>
+    </div>
+   <%end%>
+  </div>
+ </div>
+</div>

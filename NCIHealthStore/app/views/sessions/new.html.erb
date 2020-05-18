@@ -1,0 +1,26 @@
+<%= provide(:title, "Login") %>
+
+<div class="my-3">
+ <h2 class="text-center">Login to your account</h2>
+ 
+ <div class="card d-flex display:block mx-auto" style="width: 30rem;">
+  <div class="card-body">
+   
+   <%= form_tag '/login', method: :post do %>
+   
+    <div class="form-group">
+        <%= label_tag :email %>
+        <%= text_field_tag :email, nil, placeholder: 'Email address', class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <%= label_tag :password %>
+        <%= password_field_tag :password, nil, placeholder: 'Password', class: 'form-control' %>
+    </div>
+   
+    <div class="text-center">
+     <%= submit_tag "Login", class: "btn btn-primary"%>
+    </div>
+   <%end%>
+  </div>
+ </div>
+</div>

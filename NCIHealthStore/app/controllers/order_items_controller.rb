@@ -1,9 +1,7 @@
 class OrderItemsController < ApplicationController
-  
   before_action :purchase_order_required, except: [:index]
   before_action :set_order_item, only: [:show, :edit, :update, :destroy]
 
-  ##needed
   def index
     @order_items = OrderItem.all
   end
@@ -53,7 +51,6 @@ class OrderItemsController < ApplicationController
     end
     
     def purchase_order
-      ##if po is empty, it will fill the variable with the db
       @purchase_order ||= PurchaseOrder.find_by(id: params[:purchase_order_id])
     end    
     
